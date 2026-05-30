@@ -95,13 +95,18 @@ public class ScreenService {
         screenDto.setName(screen.getName());
         screenDto.setTotalSeats(screen.getTotalSeats());
 
-        if (screen.getTheater() != null) {
 
-            TheaterDto theaterDto = new TheaterDto();
-            theaterDto.setId(screen.getTheater().getId());
 
-            screenDto.setTheater(theaterDto);
-        }
+        TheaterDto theaterDto = new TheaterDto();
+        theaterDto.setId(screen.getTheater().getId());
+        theaterDto.setName(screen.getTheater().getName());
+        theaterDto.setTotalScreens(screen.getTheater().getTotalScreens());
+        theaterDto.setCity(screen.getTheater().getCity());
+        theaterDto.setAddress(screen.getTheater().getAddress());
+
+
+        screenDto.setTheater(theaterDto);
+
 
         return screenDto;
     }

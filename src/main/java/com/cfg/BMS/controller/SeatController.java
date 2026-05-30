@@ -33,4 +33,9 @@ public class SeatController {
 
         return ResponseEntity.ok(seatService.getSeatById(id));
     }
+    @GetMapping
+    public ResponseEntity<List<SeatDto>> getAllSeat() {
+
+        return ResponseEntity.ok(seatService.getAllSeats());
+    }
 }
